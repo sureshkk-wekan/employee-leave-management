@@ -35,13 +35,13 @@ Seed the JSON store with demo users and leave types:
 python -m scripts.seed_db
 ```
 
-Demo logins:
+Demo logins (all roles use the same password):
 
-| Role     | Email              | Password    |
-|----------|--------------------|-------------|
-| Admin    | admin@example.com  | admin123    |
-| Manager  | manager@example.com| manager123  |
-| Employee | employee@example.com | employee123 |
+| Role     | Email                | Password |
+|----------|----------------------|----------|
+| Admin    | admin@example.com    | admin123 |
+| Manager  | manager@example.com  | admin123 |
+| Employee | employee@example.com | admin123 |
 
 ### Frontend
 
@@ -81,24 +81,26 @@ frontend/
 
 ## Configuration
 
-- **Backend:** Copy `backend/.env.example` to `backend/.env`. Set `SECRET_KEY`. Optional: set `DATA_FILE` to a path for the JSON store (default: `backend/data.json`).
-- **Frontend:** Uses relative `/api`; ensure the backend runs on the port configured in `vite.config.js` proxy (default 8000).
+- **Backend:** Copy `backend/.env.example` to `backend/.env`. Set `SECRET_KEY` for JWT. Optional: set `DATA_FILE` for the JSON store (default: `backend/data.json`).
+- **Frontend:** Copy `frontend/.env.example` to `frontend/.env`. Optional: set `VITE_API_URL` (default `/api`). The dev server proxies `/api` to the backend (port 8000 in `vite.config.js`).
 
-## Creating a GitHub repository
+## Documentation
 
-1. Create a new repository on GitHub (e.g. `employee-leave-management`).
-2. In this directory:
+- [spec.md](spec.md) — Application specification (roles, features, API, data model)
+- [plan.md](plan.md) — Implementation plan and project structure
+- [tasks.md](tasks.md) — Task list and verification checklist
 
-   ```bash
-   git remote add origin https://github.com/YOUR_USERNAME/employee-leave-management.git
-   git add .
-   git commit -m "Initial commit: Employee Leave Management"
-   git push -u origin main
-   ```
+## GitHub
 
-## Push to GitHub
+Repository: **employee-leave-management**. To push changes:
 
-Project folder: **employee-leave-management**. See [GITHUB_PUSH.md](GITHUB_PUSH.md) for steps to create the repo and push.
+```bash
+git add .
+git commit -m "Your message"
+git push origin main
+```
+
+Use SSH (`git@github.com:...`) or a Personal Access Token; GitHub no longer accepts account passwords. See [GITHUB_PUSH.md](GITHUB_PUSH.md) for setup details.
 
 ## License
 
