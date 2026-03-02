@@ -25,9 +25,9 @@ The **Employee Leave Management System** is a web application that enables organ
 ## Core Tech Stack
 
 - **Frontend:** React (Vite) with Tailwind CSS; use hooks and context for state; keep components focused and reusable.
-- **Backend:** Python 3.10+ with FastAPI (or Node/Express if specified elsewhere); RESTful API for leave, users, and approvals.
+- **Backend:** Python 3.10+ with FastAPI; RESTful API for leave, users, and approvals.
 - **Persistence:** In-memory store with JSON file persistence (`backend/data.json`); schema for users, leave types, requests, approvals, balance snapshots, and audit log. No database required for default setup.
-- **Validation:** Pydantic v2 (or equivalent) for request/response models and business-rule validation (e.g. date ranges, balance checks).
+- **Validation:** Pydantic v2 for request/response models and business-rule validation (e.g. date ranges, balance checks).
 
 ## Architectural Principles
 
